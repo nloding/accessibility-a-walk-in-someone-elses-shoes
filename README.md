@@ -30,6 +30,7 @@ The `w3c-bad` folder is a direct copy of the [W3C Before and After Demostration]
 #### Optional
 
 * A blindfold
+* Headphones (for the screen reader)
 * [WAVE Evaluation Tool extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh "WAVE Evaluation Tool")
 * [axe extension](https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd "axe")
 * NodeJS, with packages in repository installed (`npm install` or `yarn`)
@@ -38,9 +39,9 @@ The `w3c-bad` folder is a direct copy of the [W3C Before and After Demostration]
 
 The slide deck is built using [mdx-deck](https://github.com/jxnblk/mdx-deck). If you want to run the slides from this talk:
 
-* Navigate to the `slides` folder
 * Run `npm install` or `yarn` to install the dependencies
 * Run `npm start` or `yarn start` to launch the deck
+* Run `npm run build` or `yarn run build` to build a PDF of the slides
 
 ## Exercises
 
