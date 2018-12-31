@@ -45,4 +45,23 @@ The slide deck is built using [mdx-deck](https://github.com/jxnblk/mdx-deck). If
 
 ## Exercises
 
-**COMING SOON!**
+Each exercise is atomic, you can do each exercise on its own or in any order.
+
+#### Exercise 01: No Vision
+
+##### Requirements
+
+* A blindfold
+* Headphones
+* A screen reader that works with Chrome, like [ChromeVox](http://www.chromevox.com/installing.html "ChromeVox")
+
+##### Steps
+
+1. Open `01-no_vison/inaccessible.html` in your browser, _and try not to look at the page_
+2. Turn on your screen reader
+3. Cover your eyes with the blindfold, or otherwise obstruct the screen
+4. Attempt to navigate the page
+
+##### Questions
+
+
