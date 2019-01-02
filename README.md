@@ -16,13 +16,11 @@ These impairments are quite common and are simple to simulate using a combinatio
 
 Last, we will look at testing strategies to audit your code for potential accessibility issues, using extensions such as Google’s Lighthouse, Deque’s axe-engine, and others.
 
-#### W3C Before and After Demo
-
-The `w3c-bad` folder is a direct copy of the [W3C Before and After Demostration](https://www.w3.org/WAI/demos/bad/Overview.html). The majority of the exercises in this workshop follow this demostration. Each exercise folder is a slightly customized version of this demo. The entire demo itself is provided without alteration in the `w3c-bad` folder.
-
 ## Requirements
 
 * This repository
+* Node, with NPM or Yarn
+* NodeJS, with packages in repository installed (`npm install` or `yarn`)
 * Google Chrome (latest)
 * [ChromeLens extension](https://chrome.google.com/webstore/detail/chromelens/idikgljglpfilbhaboonnpnnincjhjkd "ChromeLens")
 * A screen reader that works with Chrome, like [ChromeVox](http://www.chromevox.com/installing.html "ChromeVox")
@@ -33,19 +31,20 @@ The `w3c-bad` folder is a direct copy of the [W3C Before and After Demostration]
 * Headphones (for the screen reader)
 * [WAVE Evaluation Tool extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh "WAVE Evaluation Tool")
 * [axe extension](https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd "axe")
-* NodeJS, with packages in repository installed (`npm install` or `yarn`)
 
 #### Slide Deck
 
 The slide deck is built using [mdx-deck](https://github.com/jxnblk/mdx-deck). If you want to run the slides from this talk:
 
 * Run `npm install` or `yarn` to install the dependencies
-* Run `npm start` or `yarn start` to launch the deck
+* Run `npm run slides` or `yarn run slides` to launch the deck
 * Run `npm run build` or `yarn run build` to build a PDF of the slides
 
 ## Exercises
 
-Each exercise is atomic, you can do each exercise on its own or in any order.
+Each exercise is atomic, you can do each exercise on its own or in any order. In order to use many Chrome extensions, including ChromeLens, you must be opening
+pages off a web server. A simple Node/Express static file server is provided to do the exercises. First, you must start the server by running `npm start` or
+`yarn start` then opening `http://localhost:3000` in your browser. You should see an extremely simple landing page with links to the exercises.
 
 #### Exercise 01: No Vision
 
@@ -57,7 +56,7 @@ Each exercise is atomic, you can do each exercise on its own or in any order.
 
 ##### Steps
 
-1. Open `01-no_vison/inaccessible.html` in your browser, _and try not to look at the page_
+1. Open `Exercise 01: No Vision` in your browser, _and try not to look at the page_
 2. Turn on your screen reader
 3. Cover your eyes with the blindfold, or otherwise obstruct the screen
 4. Attempt to navigate the page
@@ -65,3 +64,6 @@ Each exercise is atomic, you can do each exercise on its own or in any order.
 ##### Questions
 
 
+
+
+# Notes
