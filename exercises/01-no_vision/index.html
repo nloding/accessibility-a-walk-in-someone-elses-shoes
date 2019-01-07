@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=0.80">
+
+		<title>Accessibility: A Walk in Someone Else's Shoes - Exercise 01: No Vision</title>
+
+		<meta name="title" content="A11y: A Walk in Someone Else's Shoes - Exercise 01: No Vision">
+		<meta name="description" content="A workshop to experience first hand why accessibility is necessary and important.">
+		<meta name="keywords" content="comma, separated, list">
+		<meta name="author" content="author name">
+
+		<link href="/src/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/src/css/font-awesome.css" rel="stylesheet">
+		<link href="/src/css/accessible.css" rel="stylesheet">
+
+		<script src="/src/js/jquery.min.js"></script>
+		<script src="/src/js/bootstrap.min.js"></script>
+		<script src="/src/js/bootstrap-hover-dropdown.min.js"></script>
+		<script src="/src/js/jquery.smooth-scroll.min.js"></script>
+		<script src="/src/js/jquery.vide.min.js"></script>
+		<script src="/src/js/jquery.bgswitcher.js"></script>
+		<script src="/src/js/chartjs-utils.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+
+		<link href="/src/css/app.css" rel="stylesheet">
+		<link href="/src/css/inaccessible-overrides.css" rel="stylesheet">
+		<script src="/src/js/app.js"></script>
+		
+		<script type="text/javascript">
+			var barChartData = {
+				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+				datasets: [{
+					label: 'Dataset 1',
+					backgroundColor: window.chartColors.red,
+					data: [
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor()
+					]
+				}, {
+					label: 'Dataset 2',
+					backgroundColor: window.chartColors.blue,
+					data: [
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor()
+					]
+				}, {
+					label: 'Dataset 3',
+					backgroundColor: window.chartColors.green,
+					data: [
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor(),
+						randomScalingFactor()
+					]
+				}]
+			};
+
+			window.onload = function() {
+				var ctx = document.getElementById('canvas').getContext('2d');
+				window.myBar = new Chart(ctx, {
+					type: 'bar',
+					data: barChartData,
+					options: {
+						title: {
+							display: true,
+							text: 'Chart.js Bar Chart - Stacked'
+						},
+						tooltips: {
+							mode: 'index',
+							intersect: false
+						},
+						responsive: true,
+						scales: {
+							xAxes: [{
+								stacked: true,
+							}],
+							yAxes: [{
+								stacked: true
+							}]
+						}
+					}
+				});
+			};
+		</script>
+
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top navbar-white">
+			<div class="top-header">
+				<div class="container">
+					<div class="menu-block pull-left hidden-xs">Text Size:</div>
+					<button type="button" class="btn btn-link pull-left hidden-xs increase-font" aria-label="Increase"><em class="fa fa-plus" aria-hidden="true"></em></button>
+					<button type="button" class="btn btn-link pull-left hidden-xs decrease-font" aria-label="Decrease"><em class="fa fa-minus" aria-hidden="true"></em></button>
+				</div>
+			</div>
+
+			<div class="container">
+				
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top_main_navigation" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">
+						<img src="/src/img/cm_gears_white_100-inverted.png" alt="Back to home">
+					</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="top_main_navigation">
+					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="/01-no_vision/index.html">Exercise 01: No Vision</a></li>
+								<li><a href="/02-low_vision/index.html">Exercise 02: Low Vision</a></li>
+								<li><a href="/03-mobility_impairment/index.html">Exercise 03: Mobility Impairment</a></li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">A</a></li>
+								<li><a href="#">B</a></li>
+								<li><a href="#">C</a></li>
+								<li><a href="#">D</a></li>
+								<li><a href="#">E</a></li>
+								<li><a href="#">F</a></li>
+								<li><a href="#">G</a></li>
+								<li><a href="#">H</a></li>
+								<li><a href="#">I</a></li>
+							</ul>
+						</li>
+						<li><a href="#contact-us">Contact</a></li>
+					</ul>
+
+					<form class="navbar-form navbar-right hidden-sm hidden-md" action="#">
+						<div class="input-group">
+							<input type="text" class="form-control" id="search_main" placeholder="Search this site" tabindex="5">
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="submit"><em class="fa fa-search" aria-hidden="true"></em></button>
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</nav>
+
+		<div class="banner home-1" data-type="background" data-speed="4" style="background-image: url(../src/img/sabri-tuzcu-331970-unsplash.jpg); background-position: 50% 30.75px;">
+			<div class="banner-interior">
+				<div class="container tall">
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1 text-center">
+							<span class="banner-header">Accessibility: A Walk in Someone Else's Shoes</span>
+							<p class="lead">A workshop to experience first hand why accessibility is necessary and important.</p>
+							<p>
+								<a href="http://www.codemash.org/" class="btn btn-primary btn-lg">Conference Page</a>
+								<a href="https://github.com/nloding/accessibility-a-walk-in-someone-elses-shoes" class="btn btn-default btn-lg">Repository</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="content" id="main_content">
+			<div class="container">
+				
+				<div class="row pad-top-sm pad-bottom line-bottom">
+					<div class="col-md-12 text-center">
+						<h2 class="text-center">This Is A Demo Page</h2>
+						<p class="lead">
+							Try navigating this page with a screen reader, or with an extension that fuzzes the page to mimic a low vision impairment. What are the issues you run into? Were you able to navigate to all
+							the elements on the page? How can these issues be mitigated?
+						</p>
+					</div>
+				</div>
+
+
+				<div class="row pad-bottom line-bottom">
+					<div class="col-md-5">
+						<h3>This section has a chart</h3>
+						<p>
+							Note that this workshop doesn't address the possible accessibility issues within the chart itself. This example uses <em>Chart.js</em> and it has some documentation on
+							accessibility <a href="https://www.chartjs.org/docs/latest/general/accessibility.html">that can be found here.</a>
+						</p>
+						<hr>
+						<h3>What about the colors?</h3>
+						<p>
+							What do you think about the colors of that chart? How might you correct that to make it more accessible?
+						</p> 
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mattis turpis nec dui cursus facilisis. Cras lacus elit, fermentum eu vulputate quis, tempor nec metus.
+						</p>
+						
+					</div>
+
+					<div class="col-md-6 col-md-offset-1">
+						<canvas id="canvas"></canvas>
+					</div>
+				</div>
+
+				<div class="row pad-bottom line-bottom">
+					<div class="col-md-6 col-md-offset-3">
+						<div class="alert alert-danger">
+							This is an alert message from the contact form.
+						</div>
+						<h1>Contact Us</h1>
+						<form action="#" method="POST">
+							<div class="form-group">
+								<input type="email" class="form-control" id="contactFormEmail" placeholder="Email" tabindex="1">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" id="contactFormSubject" placeholder="Subject" tabindex="2">
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" id="contactFormMessage" tabindex="3"></textarea>
+							</div>
+							<button type="submit" class="btn btn-default" tabindex="4">Send!</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="container">
+				<div class="row pad-top-sm pad-bottom-sm">
+						<div class="col-md-12 text-center">
+							<h3 class="text-center large">Tables Need Accessibility Too!</h3>
+							<p class="lead">
+								How often do you <code>&lt;caption&gt;</code> your tables?
+								How often do you add the <code>scope</code> attribute to your table rows?
+							</p>
+						</div>
+					</div>
+				<div class="row pad-top-sm pad-bottom-sm">
+					<div class="col-md-12">
+						<table class="table">
+							<tr>
+								<td>Conference</td>
+								<td>Location</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>CodeMash</td>
+								<td>Sandusky, OH</td>
+								<td>
+									<div class="btn-group">
+										<button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+										<button type="button" class="btn btn-secondary"><i class="fa fa-info-circle"></i></button>
+										<button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>Dog Food Con</td>
+								<td>Columbus, OH</td>
+								<td>
+									<div class="btn-group">
+										<button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+										<button type="button" class="btn btn-secondary"><i class="fa fa-info-circle"></i></button>
+										<button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>Music City Tech</td>
+								<td>Nashville, TN</td>
+								<td>
+									<div class="btn-group">
+										<button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+										<button type="button" class="btn btn-secondary"><i class="fa fa-info-circle"></i></button>
+										<button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>Beer City Code</td>
+								<td>Grand Rapids, MI</td>
+								<td>
+									<div class="btn-group">
+										<button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+										<button type="button" class="btn btn-secondary"><i class="fa fa-info-circle"></i></button>
+										<button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>That Conference</td>
+								<td>Wisconsin Dells, WI</td>
+								<td>
+									<div class="btn-group">
+										<button type="button" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+										<button type="button" class="btn btn-secondary"><i class="fa fa-info-circle"></i></button>
+										<button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="content">
+
+			<div class="container">		
+
+
+				<div class="row pad-top-sm pad-bottom-sm">
+					<div class="col-md-12 text-center">
+						<h3 class="text-center large">Grids make your website hip!</h3>
+						<p class="lead">
+							This website has a fancy grid of "features" because lots of websites have them. It's all the rage! The cool kids are doing it!
+							Or was that last year?
+						</p>
+					</div>
+				</div>
+
+				<div class="row text-center pad-top-sm pad-bottom-sm ">
+
+					<div class="col-sm-4">
+						<a href="#" class="no-hover">
+							<div class="row mobile-left">
+								<div class="col-xs-5 col-sm-12 text-center">
+									<em class="fa fa-rounded fa-list"></em>
+								</div>
+								<div class="col-xs-7 col-sm-12">
+									<h4>Sample Heading One</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<hr class="visible-xs col-xs-12">
+
+					<div class="col-sm-4">
+						<a href="#" class="no-hover">
+							<div class="row mobile-left">
+								<div class="col-xs-5 col-sm-12 text-center">
+									<em class="fa fa-rounded fa-user"></em>
+								</div>
+								<div class="col-xs-7 col-sm-12">
+									<h4>Sample Heading Two</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<hr class="visible-xs col-xs-12">
+
+					<div class="col-sm-4">
+						<a href="#" class="no-hover">
+							<div class="row mobile-left">
+								<div class="col-xs-5 col-sm-12 text-center">
+									<em class="fa fa-rounded fa-th"></em>
+								</div>
+								<div class="col-xs-7 col-sm-12">
+									<h4>Sample Heading Three</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+
+				<div class="row text-center">
+
+					<hr class="visible-xs col-xs-12">
+
+					<div class="col-sm-4">
+						<a href="#" class="no-hover fancy-hover">
+							<div class="row mobile-left">
+								<div class="col-xs-5 col-sm-12">
+									<img src="/src/img/500placeholder.jpg" class="img-responsive img-circle img-pad">
+								</div>
+								<div class="col-xs-7 col-sm-12">
+									<h4>Example 1</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<hr class="visible-xs col-xs-12">
+
+					<div class="col-sm-4">
+						<a href="#" class="no-hover fancy-hover">
+							<div class="row mobile-left">
+								<div class="col-xs-5 col-sm-12">
+									<img src="/src/img/500placeholder.jpg" class="img-responsive img-circle img-pad">
+								</div>
+								<div class="col-xs-7 col-sm-12">
+									<h4>Example 2</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<hr class="visible-xs col-xs-12">
+
+					<div class="col-sm-4">
+						<a href="#" class="no-hover fancy-hover">
+							<div class="row mobile-left">
+								<div class="col-xs-5 col-sm-12">
+									<img src="/src/img/500placeholder.jpg" alt="placeholder image" class="img-responsive img-circle img-pad">
+								</div>
+								<div class="col-xs-7 col-sm-12">
+									<h4>Example 3</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+			
+			</div>
+		</div>
+
+		<footer>
+			<div class="container">
+				<div class="row footer-one">
+					<div class="col-md-7 hidden-sm hidden-xs">
+
+						<div class="row sub-links">
+							<div class="col-xs-3">
+								<ul class="list-unstyled">
+									<li><strong>Home</strong></li>
+									<li><a href="/01-no_vision/index.html">Exercise 01: No Vision</a></li>
+									<li><a href="/02-low_vision/index.html">Exercise 02: Low Vision</a></li>
+									<li><a href="/03-mobility_impairment/index.html">Exercise 03: Mobility Impairment</a></li>
+								</ul>
+							</div>
+							<div class="col-xs-3">
+								<ul class="list-unstyled">
+									<li><strong>Pages</strong></li>
+									<li><a href="#">A</a></li>
+									<li><a href="#">B</a></li>
+									<li><a href="#">C</a></li>
+									<li><a href="#">D</a></li>
+									<li><a href="#">E</a></li>
+									<li><a href="#">F</a></li>
+									<li><a href="#">G</a></li>
+									<li><a href="#">H</a></li>
+									<li><a href="#">I</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-5 text-right social mobile-left">
+						Connect:
+						<a href="#" target="blank" aria-label="Navigate to Facebook"><em class="fa fa-facebook" aria-hidden="true"></em></a>
+						<a href="#" target="blank" aria-label="Navigate to Twitter"><em class="fa fa-twitter" aria-hidden="true"></em></a>
+						<a href="#" target="blank" aria-label="Navigate to YouTube"><em class="fa fa-youtube" aria-hidden="true"></em></a>
+						<a href="#" target="blank" aria-label="Navigate to Pinterest"><em class="fa fa-pinterest" aria-hidden="true"></em></a>
+						<a href="#" target="blank" aria-label="Navigate to LinkedIn"><em class="fa fa-linkedin" aria-hidden="true"></em></a>
+						<a href="#" target="blank" aria-label="Navigate to Instagram"><em class="fa fa-intagram" aria-hidden="true"></em></a>
+						<span class="spacer" aria-hidden="true"> | </span>
+						<a href="#" target="blank" aria-label="Navigate to iPhone App"><em class="fa fa-apple" aria-hidden="true"></em></a>
+						<a href="#" target="blank" aria-label="Navigate to Android App"><em class="fa fa-android" aria-hidden="true"></em></a>
+
+						<hr>
+
+						<address>
+							<strong>Fake Monopolistic Corporation</strong><br>
+							7000 Kalahari Dr<br>
+							Sandusky, OH 44870<br>
+						</address>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce blandit velit sit amet sodales porttitor. Praesent vitae dolor ornare, varius dolor ut, vehicula urna. Suspendisse egestas arcu ut pretium rutrum. Nullam mattis magna nec mauris aliquet, suscipit lobortis sem finibus. Sed sollicitudin erat mollis scelerisque rutrum. Duis dapibus id leo scelerisque pretium. Nulla facilisi.</p>
+						<p>© 2018 <strong>Fake Monopolistic Corporation</strong>. All Rights Reserved. (It's under a GPL license, have at it ...)</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</body>
+</html>

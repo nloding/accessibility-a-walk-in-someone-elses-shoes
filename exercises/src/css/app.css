@@ -1,0 +1,552 @@
+/* These are fonts which are loaded in from the Google Web Fonts library. Customize this as needed to utilize different fonts */
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i');
+
+/* Basic element styling */
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	color: #666;
+	padding-top: 123px;
+	-webkit-font-smoothing: antialiased;
+	-webkit-overflow-scrolling: touch;
+}
+h1, h2 {
+	/*font-family: 'Playfair Display', serif;*/ /* Un-Comment this line for serif headlines */
+	font-weight: 300;
+	line-height: 1.3;
+}
+h1 {
+	font-size: 64px;
+	line-height: 1.15;
+	color: #222;
+}
+h2, h3.large {
+	font-size: 42px;
+	color: #222;
+	font-weight: 300;
+}
+h3 {
+	font-size: 21px;
+	font-weight: 700;
+	color: #444;
+}
+h4 {
+	font-size: 18px;
+	color: #017aad;
+}
+h5 {
+	font-size: 18px;
+}
+p.lead {
+	font-size: 24px;
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+cite {
+	color: #444;
+}
+address {
+	font-size: 14px;
+	color: #222;
+	padding: 5px 0;
+}
+blockquote {
+	margin: 30px 0;
+}
+.form-control {
+	border-radius: 0;
+}
+a {
+	color: #137e91;
+}
+
+/* This is a fix for alignment if ul elements are placed adjacent to floated image */
+#main_content ul {
+	overflow: hidden;
+}
+
+/* Mobile headline sizes */
+@media (max-width: 992px) {
+	h1 {
+		font-size: 54px;
+	}
+	h2 {
+		font-size: 36px;
+	}
+	br { display: none; }
+}
+
+/* Image Helpers */
+.img-pad {
+	max-width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+.img-body {
+	margin: 20px;
+	max-width: 30%
+}
+.img-body.pull-left {
+	margin-left: 0;
+}
+.img-body.pull-right{
+	margin-right: 0;
+}
+.align-image {
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+
+/* Padding helpers, these can be used with all components */
+.pad-top {
+	padding-top: 50px;
+}
+.pad-top-sm {
+	padding-top: 30px;
+}
+.pad-bottom {
+	padding-bottom: 80px;
+}
+.pad-bottom-sm {
+	padding-bottom: 20px;
+}
+.line-bottom {
+	border-bottom: 1px solid #e7e7e7;
+	margin-bottom: 50px;
+}
+.no-margin {
+	margin: 0;
+}
+
+
+/* Fancy font awesome icon styling, makes a rounded element out of the icon */
+.fa-rounded {
+	border: 1px solid #137e91;
+	border-radius: 1000px;
+	width: 72px;
+	height: 72px;
+	padding: 21px 0;
+	font-size: 24px;
+	text-align: center;
+	color: #137e91;
+
+}
+
+/* Button styling */
+.banner .btn-primary {
+	font-size: 19px;
+}
+.btn {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.btn-primary {
+	background-color: #137e91;
+	border-color: #137e91;
+	border-radius: 30px;
+	font-weight: 700;
+}
+.btn-info {
+	background-color: #ffffff;
+	border-color: #137e91;
+	border-radius: 30px;
+	font-weight: bold;
+	color: #137e91;
+}
+.btn-default {
+	border-radius: 30px;
+	font-weight: bold;
+}
+.btn-success {
+	border-radius: 30px;
+	font-weight: bold;
+}
+.btn-danger {
+	border-radius: 30px;
+	font-weight: bold;
+}
+
+/* Modal styling */
+@media (min-width: 768px) {
+	.modal-dialog {
+		width: 800px;
+	}
+}
+.modal-body {
+	padding: 40px;
+}
+
+/* Tab styling */
+.tab-pane {
+	padding-top: 40px;
+}
+
+/* Styling for navigation menu */
+.top-header {
+	font-size: 14px;
+	background-color: #09505d;
+	color: #fff;
+}
+.navbar-white .top-header {
+	background-color: #f5f5f5;
+	color: #444;
+}
+.top-header .btn {
+	padding: 5px 5px;
+	color: #fff;
+}
+.navbar-white .top-header .btn {
+	color: #09505d;
+}
+.menu-block {
+	display: block;
+	padding: 6px 0;
+	padding-left: 15px;
+}
+.menu-block ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.menu-block li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+.top-header .btn-link:hover, 
+.top-header .btn-link.dropdown-toggle {
+	color: #fff;
+}
+.navbar-white .top-header .btn-link:hover, 
+.navbar-white .top-header .btn-link.dropdown-toggle {
+	color: #09505d;
+}
+
+/* Styling for login dropdown */
+#login-dp {
+	padding: 20px;
+	margin-left: -170px;
+}
+#login-dp .btn-primary {
+	color: #fff;
+}
+#login-dp label {
+	color: #09505d;
+}
+.btn-login {
+	font-weight: bold;
+	color: #fff !important;
+	padding: 3px 0 !important;
+	padding-left: 10px !important;
+	font-size: 17px;
+
+}
+.navbar-white .btn-login {
+	color: #09505d !important;
+
+}
+
+
+/* Navigation bar styling */
+.navbar-default {
+	background-color: #06434e;
+	margin-bottom: 0;
+	border-color: rgba(255,255,255,0.5);
+	-webkit-box-shadow: 0 0 15px 0 rgba(0,0,0,.15);
+	box-shadow: 0 0 15px 0 rgba(0,0,0,.15);
+}
+.navbar-white {
+	background-color: #ffffff;
+}
+.navbar-default .navbar-toggle {
+	border: 0;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+	background-color: transparent;
+}
+.navbar-default .navbar-toggle > .icon-bar {
+	background-color: #137e91;
+}
+.navbar-default .navbar-brand {
+	margin-right: 60px;
+	padding-top: 22px;
+}
+.navbar-default .navbar-brand img {
+	max-width: 250px;
+}
+.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+	max-height: 500px;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+	font-weight: 500;
+	font-size: 18px;
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+.navbar-white .navbar-nav > li > a {
+	color: #222;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	color: #137e91;
+	background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	background-color: transparent;
+	color: #137e91;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+	background-color: #f2f2f2;
+	color: #222;
+}
+.dropdown-menu {
+	background-color: #f2f2f2;
+	min-width: 250px;
+	border: none;
+	box-shadow: none;
+}
+.dropdown-menu>li>a {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	color: #137e91;
+	font-size: 15px;
+}
+.navbar-form {
+	padding-top: 18px;
+	padding-bottom: 14px;
+}
+.navbar-form input {
+	min-width: 250px;
+	background-color: rgba(255,255,255,0.85);
+}
+.navbar-form button {
+	padding: 6px 12px;
+	padding-right: 15px;
+	font-size: 14px;
+}
+.no-pad {
+	padding: 0;
+}
+
+/* Mobile styling for header */
+@media (max-width: 768px) {
+	body {
+		padding-top: 84px;
+	}
+	.navbar-default .navbar-brand {
+		margin-right: 10px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	.navbar-default .navbar-brand img {
+		max-width: 220px;
+	}
+	.navbar-default .navbar-nav > li > a {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #eeeeee;
+		color: #06434e;
+	}
+	.navbar-nav, .navbar-form {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.mobile-left {
+		text-align: left;
+	}
+	.navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
+		background-color: #f2f2f2;
+	}
+
+}
+
+/* Global page structures */
+.content {
+	padding: 30px 0;
+}
+
+/* Breadcrumb element */
+.bread-wrap {
+	padding: 3px 0;
+	background-color: rgba(10,80,90,0.10);
+}
+.bread-wrap .breadcrumb {
+	background-color: transparent;
+	margin-bottom: 0;
+	font-size: 13px;
+	color: #444;
+	padding-left: 0;
+	font-weight: 700;
+}
+.bread-wrap.dark .breadcrumb {
+	color: #eee;
+}
+.bread-wrap.dark .breadcrumb a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+/* Banner elements and typography */
+.banner {
+	background-position: center top;
+	background-size: cover;
+	background-attachment: fixed; 
+	color: #fff;
+}
+.vid-banner {
+	background-color: transparent;
+}
+.banner .container {
+	min-height: 520px;
+	padding-bottom: 50px;
+}
+.banner .container.tall {
+	min-height: 70vh;
+	padding-top: 20vh;
+}
+.banner .container.soon {
+	min-height: 100vh;
+	padding-top: 30vh;
+}
+.banner-interior {
+	background-color: rgba(0,0,0,0.20);
+}
+.banner h1, .banner h2, .banner h3 { 
+	color: #fff;
+	margin-top: 50px;
+	margin-bottom: 18px;
+}
+.banner.interior h2, .banner.interior h3 {
+	font-size: 48px;
+	font-weight: 300;
+	margin-top: 150px;
+}
+.tall h1 {
+	font-size: 78px;
+}
+.tall p.lead {
+	font-size: 32px;
+}
+.banner .container.short {
+	min-height: auto;
+}
+.no-height {
+	min-height: auto !important;
+	padding-bottom: 0 !important;
+	background-color: transparent !important;
+}
+@media (max-width: 992px) {
+	.banner h1, .banner h2, .banner h3 {
+		text-align: center;
+		margin-top: 100px;
+	}
+	.tall h1 {
+		font-size: 65px;
+	}
+	.banner p {
+		text-align: center;
+	}
+	.banner-interior {
+		background-color: rgba(0,0,0,0.35);
+	}
+	.banner .container, .banner .container.tall {
+		min-height: 280px;
+		width: 100%;
+		padding-top: 0;
+	}
+
+}
+
+/* Icon styling on main section */
+.content a:hover .row {
+	background-color: #ebf6fc;
+	cursor: pointer;
+	border-radius: 15px;
+}
+.content  a.no-hover:hover .row {
+	background-color: transparent;
+	cursor: pointer;
+	border-radius: 15px;
+}
+.content a .row {
+	padding-top: 20px;
+}
+.content a .row p {
+	color: #222;
+	margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+	.content a:hover .row {
+		background-color: transparent;
+		cursor: pointer;
+	}
+	.content .fa-rounded {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.content a .row h3,
+	.content a .row h4 {
+		margin-top: 5px;
+	}
+}
+
+/* Global Footer */
+footer {
+	border-top: 1px solid #e7e7e7;
+	font-size: 13px;
+	color: #444;
+	padding-bottom: 100px;
+	margin-top: 50px;
+	background-color: #f9f9f9;
+}
+.footer-one {
+	padding-top: 20px;
+	font-size: 21px;
+	font-weight: 300;
+}
+.footer-links {
+	padding: 15px 0;
+	line-height: 24px;
+	border-top: 1px solid #e7e7e7;
+}
+.footer-links a:not(:last-child) {
+	border-right: 1px solid #ddd;
+	padding-right: 10px;
+}
+.footer-links a:not(:first-child) {
+	padding-left: 10px;
+}
+footer .spacer {
+	padding: 0 10px;
+	color: #666;
+}
+footer .social a {
+	margin-left: 5px;
+}
+.exp-link {
+	cursor: pointer;
+}
+.exp-link em {
+	color: #ccc;
+}
+.sub-links {
+	font-size: 14px;
+	font-weight: 400;
+	padding: 10px 0;
+}
+
+/* inaccessible stylings - don't cheat! */
+
+.banner-header {
+    font-weight: 300;
+	line-height: 1.3;
+	font-size: 64px;
+	line-height: 1.15;
+	color: #fff;
+}
