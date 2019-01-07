@@ -63,7 +63,47 @@ pages off a web server. A simple Node/Express static file server is provided to 
 
 ##### Questions
 
+* Were you able to identify all the form elements, in a meaningful way?
+* Were you able to identify what each link and button element was for?
+* Did the page move around logically?
 
+#### Exercise 02: Low Vision
 
+##### Requirements
 
-# Notes
+* [ChromeLens extension](https://chrome.google.com/webstore/detail/chromelens/idikgljglpfilbhaboonnpnnincjhjkd "ChromeLens")
+
+##### Steps
+
+1. Open `Exercise 02: Low Vision` in your browser, _and try not to look at the page_
+2. Open the Chrome Dev Tools
+3. Open the "ChromeLens" dev tool tab
+4. Check the box for "Enable Lens"
+5. Start with "Partial Blindness (medium)"
+6. Attempt to navigate the page
+7. Repeat with different vision impairments, such as "Protanopia (red-blind)" and "Tritanopia (blue-blind)"
+
+##### Questions
+
+* Were you able to identify what elements has focus?
+* Were you able to distinguish between the elements on the graph?
+* Were you able to identify *at a glance* whether the alert above the form was informational or an error?
+
+#### Exercise 03: Mobility Impairment
+
+##### Requirements
+
+* If you have an external mouse, disconnect it!
+* If you are using a trackpad ... pretend it's not there!
+
+##### Steps
+
+1. Open `Exercise 03: Mobility Impairment` in your browser, _and try not to look at the page_
+2. Attempt to navigate the page _without using your mouse/trackpad_
+
+##### Questions
+
+* Were you able to identify what elements has focus?
+* Did the page move around logically?
+* Were there significant differences in navigating the page with your eyes open and no mouse compared to
+`Exercise 01: No Vision`?

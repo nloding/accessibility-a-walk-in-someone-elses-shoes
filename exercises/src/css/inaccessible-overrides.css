@@ -1,3 +1,8 @@
 *:focus {
     outline: 0 !important;
 }
+
+.form-control:focus {
+    border-color: #ccc;
+    box-shadow: none;
+}
