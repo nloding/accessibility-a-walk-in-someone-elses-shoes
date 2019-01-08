@@ -6,8 +6,6 @@ export default ({ children }) => (
     style={{
       filter: 'blur(10px)'
     }}>
-        <Layout>
-            {children}
-        </Layout>
+        {children}
   </div>
 )
