@@ -550,3 +550,11 @@ footer .social a {
 	line-height: 1.15;
 	color: #fff;
 }
+
+/* THAT Conference specific, to make the logo nice */
+.that-conf-logo {
+	padding-top: 0 !important;
+}
+.that-conf-logo > img {
+	max-height: 90px;
+}
