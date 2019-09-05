@@ -9,7 +9,6 @@ const Wrapper = styled.main`
   flex-direction: row;
   justify-content: center;
   position: relative;
-  filter: blur(10px);
 `
 
 export default ({ children }) => (

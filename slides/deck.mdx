@@ -1,57 +1,73 @@
 import {
     Blurred,
     ColorBlind,
-    Layout,
-    Theme
+    FixImage,
+    TitleRow
 } from './'
 import {
     Appear,
-    Head
+    Head,
+    Image,
+    Notes
 } from 'mdx-deck'
+import customTheme from './'
+import { future, prism } from '@mdx-deck/themes'
 
-export default Theme
+export const themes = [ prism, customTheme ]
 
 <Head>
   <title>Accessibility: A Walk in Someone Else's Shoes</title>
 </Head>
 
-export default Blurred
+<Blurred>
 
 # Accessibility:
 ## A Walk in Someone Else’s Shoes
 
 ##### A workshop to experience first hand why accessibility is necessary and important.
 
+</Blurred>
+
 ---
 
-export default ColorBlind
+<ColorBlind>
 
 # Accessibility:
 ## A Walk in Someone Else’s Shoes
 
 ##### A workshop to experience first hand why accessibility is necessary and important.
 
+</ColorBlind>
+
 ---
+
+<TitleRow>
 
 # Accessibility:
 ## A Walk in Someone Else’s Shoes
 
 ##### A workshop to experience first hand why accessibility is necessary and important.
 
----
-
-![](img/That-Conference-Sponsors-Slide.png)
+</TitleRow>
 
 ---
 
 # Poll
 
-```notes
+<Notes>
+
 * anyone have a disability?
 * anyone have a disability that affects using the web?
 * anyone test for accessibility in their apps?
 * anyone work for a public agency?
-```
+
+</Notes>
+
+---
+
+# Prereqs!
+
+<a href="http://bit.ly/a11y-shoes-talk" target="_blank">http://bit.ly/a11y-shoes-talk</a>
 
 ---
 
@@ -59,7 +75,9 @@ export default ColorBlind
 
 <ul style={{ listStyle: 'none', paddingLeft: '0' }}>
     <Appear>
-        <li>PTSD | He/Him</li>
+        <li>PTSD</li>
+        <li>He/Him</li>
+        <li>Husband, father, hacker, maker</li>
         <li>Senior Application Developer @ <a href="https://www.ostusa.com/">OST</a></li>
         <li>Co-founder/Lead developer @ <a href="https://www.carecircle.com/">CareCircle</a></li>
         <li><a href="https://twitter.com/NathanLoding">@NathanLoding</a>*</li>
@@ -68,7 +86,9 @@ export default ColorBlind
 
 ---
 
-![](img/carecircle-logo_full-color-1024.png)
+import carecircleLogo from './img/carecircle-logo_full-color-1024.png'
+
+<img src={carecircleLogo} />
 
 ---
 
@@ -98,7 +118,9 @@ export default ColorBlind
 
 ---
 
-![](img/beyonce_tweet.png)
+import beyonce from './img/beyonce_tweet.png'
+
+<img src={beyonce} />
 
 ---
 
@@ -210,19 +232,26 @@ export default ColorBlind
 
 ---
 
-## Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.
+### Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.
 
 ---
 
 ```html
-<button class="btn btn-primary"><i class="fa fa-trash"></i></button>
+<button class="btn btn-primary">
+    <i class="fa fa-trash"></i>
+</button>
 ```
 
-becomes
+---
 
 ```html
-<button class="btn btn-primary"><i class="fa fa-trash"></i> Remove</button>
-<button class="btn btn-primary" aria-label="Remove"><i class="fa fa-trash"></i></button>
+<button class="btn btn-primary">
+    <i class="fa fa-trash"></i> Remove
+</button>
+<!-- or -->
+<button class="btn btn-primary" aria-label="Remove">
+    <i class="fa fa-trash"></i>
+</button>
 ```
 
 ---
@@ -231,16 +260,24 @@ becomes
 <img class="img-responsive" src="xyz.png" />
 ```
 
-becomes
+---
 
 ```html
-<img class="img-responsive" alt="An image of XYZ" src="xyz.png" />
+<img
+    class="img-responsive"
+    alt="An image of XYZ"
+    src="xyz.png" />
 ```
+
+---
 
 *_NOT_*
 
 ```html
-<img class="img-responsive" alt="xyz.png" src="xyz.png" />
+<img
+    class="img-responsive"
+    alt="xyz.png"
+    src="xyz.png" />
 ```
 
 ---
@@ -257,11 +294,15 @@ Semantic structure matters! Tab order matters!
 
 ---
 
-![](img/pour_with-css.png)
+import pourWithCss from './img/pour_with-css.png'
+
+<img src={pourWithCss} />
 
 ---
 
-![](img/pour_wo-css.png)
+import pourWoCss from './img/pour_wo-css.png'
+
+<img src={pourWoCss} />
 
 ---
 
@@ -270,13 +311,18 @@ Semantic structure matters! Tab order matters!
 ---
 
 ```html
-<div class="alert alert-danger">This is some text</div>
+<div class="alert alert-danger">
+    This is some text
+</div>
 ```
 
-becomes
+---
 
 ```html
-<div class="alert alert-danger"><i class="fa fa-exclamation"></i> This is some text</div>
+<div class="alert alert-danger">
+    <i class="fa fa-exclamation"></i>
+    This is some text
+</div>
 ```
 
 ---
@@ -289,11 +335,13 @@ If your page refreshes data, does it retain focus on the right data?
 
 ---
 
+import colorContrast from './img/color-contrast.png'
+
 ## Contrast
 
 ## WCAG 2.0 AA: 4.5:1 / 3.1 (large text)
 
-![](img/color-contrast.png)
+<img src={colorContrast} />
 
 ---
 
@@ -309,10 +357,14 @@ If your page refreshes data, does it retain focus on the right data?
 <img onClick={() => this.props.callback()} />
 ```
 
-becomes
+---
 
 ```jsx
-<img onClick={/* ... */} onKeyPress={(event) => event.key === 'Enter' && this.props.callback()} />
+<img
+    onClick={/* ... */}
+    onKeyPress={(event) => 
+        event.key === 'Enter' && this.props.callback()}
+/>
 ```
 
 ---
@@ -329,9 +381,9 @@ becomes
 
 <ul style={{ listStyle: 'none', paddingLeft: '0' }}>
     <Appear>
-        <li>Semantic headings: one <code>h1</code> per page, decrement headings</li>
+        <li>Semantic headings: one <em>h1</em> per page, decrement headings</li>
         <li>Labels on form elements</li>
-        <li>Use of <code>&lt;main /></code>, <code>&lt;section /></code>, and <code>&lt;article /></code> </li>
+        <li>Use of <em>&lt;main /></em>, <em>&lt;section /></em>, and <em>&lt;article /></em></li>
         <li>"Skip to" or "Skip Navigation" links</li>
     </Appear>
 </ul> 
@@ -344,9 +396,19 @@ becomes
 
 ## Make text content readable and understandable
 
-Set a language on your page! `<html lang="en">`
+---
 
-Or mark individual bits as another language: `<span lang="fr">C'est la vie</span> isn't in English.`
+Set a language on your page!
+
+`<html lang="en">`
+
+---
+
+Or mark individual bits as another language:
+
+`<span lang="fr">C'est la vie</span> isn't in English.`
+
+---
 
 Use `<abbr>` when applicable
 
@@ -393,6 +455,9 @@ Use `<abbr>` when applicable
 ## Have you used a screen reader before? Have you used ChromeVox before?
 
 [ChromeVox Keyboard Controls](http://www.chromevox.com/keyboard_shortcuts.html)
+
+* Mac: 
+* Win: 
 
 ---
 
@@ -498,15 +563,19 @@ Use `<abbr>` when applicable
 
 ---
 
+import wave from './img/wave.png'
+
 ## WAVE Evaluation Tool
 
-![](img/wave.png)
+<img src={wave} />
 
 ---
 
+import lighthouse from './img/lighthouse.png'
+
 ## Google Lighthouse extension
 
-![](img/lighthouse.png)
+<img src={lighthouse} />
 
 ---
 
@@ -518,15 +587,19 @@ Use `<abbr>` when applicable
 
 ---
 
+import pa11y from './img/pa11y.png'
+
 ## pa11y
 
-![](img/pa11y.png)
+<img src={pa11y} />
 
 ---
 
+import deque from './img/axe-chrome.png'
+
 ## Deque aXe
 
-![](img/axe-chrome.png)
+<img src={deque} />
 
 ---
 
@@ -543,7 +616,5 @@ Use `<abbr>` when applicable
 ---
 
 # That's all folks!
-
-![](img/That-Conference-2020.png)
 
 ---

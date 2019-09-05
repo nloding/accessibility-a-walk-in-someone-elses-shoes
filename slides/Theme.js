@@ -1,8 +1,7 @@
-import { future as theme } from 'mdx-deck/themes'
-// import atomDark from 'react-syntax-highlighter/styles/prism/atom-dark'
+import { future } from 'mdx-deck/themes'
 
-export default {
-  ...theme,
+const theme = {
+  ...future,
   colors: {
     text: '#000',
     background: '#fff',
@@ -12,3 +11,5 @@ export default {
     code: '#fff'
   }
 }
+
+export default theme
