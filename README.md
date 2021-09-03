@@ -19,18 +19,25 @@ Last, we will look at testing strategies to audit your code for potential access
 ## Requirements
 
 * This repository
-* Node, with NPM or Yarn
+* Node, with NPM or Yarn ([download here](https://nodejs.org/ "NodeJS"))
 * NodeJS, with packages in repository installed (`npm install` or `yarn`)
 * Google Chrome (latest)
 * [ChromeLens extension](https://chrome.google.com/webstore/detail/chromelens/idikgljglpfilbhaboonnpnnincjhjkd "ChromeLens")
-* A screen reader that works with Chrome, like [ChromeVox](http://www.chromevox.com/installing.html "ChromeVox")
+* A screen reader that works with Chrome:
+  * [Chrome Screen Reader Extension](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en-GB "Chrome Screen Reader")
+  * NVDA
+  * JAWS
+  * Microsoft Narrator
+  * Apple VoiceOver
+
+*Note:* You can use a different browser if you prefer. You will need to find an extension similar to ChromeLens for whichever browser you prefer. The optional extensions below will work for all major browsers. You may also use any screen reader software you prefer; the examples will be done with Chrome Screen Reader but any will work.
 
 #### Optional
 
 * A blindfold
 * Headphones (for the screen reader)
 * [WAVE Evaluation Tool extension](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh "WAVE Evaluation Tool")
-* [axe extension](https://chrome.google.com/webstore/detail/axe/lhdoppojpmngadmnindnejefpokejbdd "axe")
+* [axe DevTools extension](https://chrome.google.com/webstore/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd?hl=en-GB "axe DevTools")
 
 #### Slide Deck
 
@@ -52,7 +59,7 @@ pages off a web server. A simple Node/Express static file server is provided to 
 
 * A blindfold
 * Headphones
-* A screen reader that works with Chrome, like [ChromeVox](http://www.chromevox.com/installing.html "ChromeVox")
+* A screen reader that works with Chrome, like [Chrome Screen Reader Extension](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en-GB "Chrome Screen Reader")
 
 ##### Steps
 
